@@ -1,0 +1,1 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {P,F} from '../scripts/core/date.js';test('parse time',()=>assert.equal(P('08:30'),510));test('format minutes',()=>assert.equal(F(570),'9h30'));
