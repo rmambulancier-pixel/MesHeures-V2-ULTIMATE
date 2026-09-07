@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 const CACHE = 'mesheures-shell-v3-real';
 const SHELL = ['./', './index.html', './manifest.json', './icon.svg', './style/style.css', './style/v3.css', './scripts/app.js', './scripts/v3.js'];
+=======
+const CACHE = 'mesheures-shell-v2';
+const SHELL = ['./', './index.html', './manifest.json', './icon.svg', './style/style.css', './scripts/app.js'];
+>>>>>>> FETCH_HEAD
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(SHELL)));

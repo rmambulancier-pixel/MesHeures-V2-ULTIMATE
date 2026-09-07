@@ -1,3 +1,24 @@
+<<<<<<< HEAD
+=======
+
+/* ===== MesHeures V2 shell ===== */
+:root{--v2bg:#07111f;--v2panel:#0d1b2d;--v2panel2:#10243b;--v2line:#203950;--v2blue:#22a8f0;--v2green:#29d391;--v2orange:#ffb020}
+body{background:radial-gradient(circle at top,#10263d 0,#07111f 45%,#050b14 100%)!important;padding-bottom:82px}
+.v2top{position:sticky;top:0;z-index:20;background:rgba(7,17,31,.92)!important;backdrop-filter:blur(20px);border-bottom:1px solid var(--v2line);padding-top:12px!important}
+.brandline{max-width:900px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 16px 10px}
+.brand{font-size:24px;font-weight:900;letter-spacing:1px}.brand span{color:var(--v2blue)}.brand b{font-size:10px;background:var(--v2blue);color:#00121f;padding:3px 6px;border-radius:5px;margin-left:6px}.brand-sub{font-size:11px;color:#92a7ba;margin-top:3px}
+.home-button{background:#0d2235!important;border:1px solid var(--v2line)!important;color:#eaf6ff!important}
+.v2top .tabs{max-width:900px;margin:0 auto;overflow-x:auto;padding:0 10px 8px!important;display:flex;gap:6px}.v2top .tabs button{white-space:nowrap}
+#s-home{display:none}#s-home.on{display:block}
+.v2hero{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:16px 2px 8px}.v2hero h2{font-size:30px;margin:5px 0}.eyebrow{font-size:10px;letter-spacing:1.2px;color:var(--v2blue);font-weight:900}.health{font-size:11px;font-weight:900;padding:8px 10px;border-radius:999px;background:#103027;color:#5de3a0;border:1px solid #206143}
+.home-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:10px 0}.home-card{text-align:left;background:linear-gradient(180deg,#112941,#0b1b2c)!important;border:1px solid var(--v2line)!important;border-radius:18px!important;padding:15px!important;color:#f5f9ff!important;min-height:130px}.home-card span{font-size:21px;display:block;margin-bottom:8px}.home-card small{display:block;color:#8fa4b8;font-weight:800;font-size:9px;letter-spacing:.8px}.home-card strong{display:block;font-size:20px;margin:5px 0}.home-card em{font-style:normal;color:#67cfff;font-size:11px}
+.v2feature{border-color:#24506d!important;background:linear-gradient(145deg,#102a44,#0a1727)!important}.feature-head{display:flex;justify-content:space-between;gap:12px;align-items:center}.feature-head h2{margin:4px 0}.home-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.summary-box{background:#071421;border:1px solid var(--v2line);border-radius:14px;padding:12px}.summary-box small{display:block;color:#91a7ba;font-size:10px}.summary-box strong{display:block;font-size:17px;margin-top:4px}
+.quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.quick-grid button{background:#0a1928!important;border:1px solid var(--v2line)!important;text-align:left;color:#dcecff!important;padding:13px!important}
+.v2bottom{display:none;position:fixed;bottom:10px;left:50%;transform:translateX(-50%);width:min(880px,calc(100% - 20px));z-index:50;background:rgba(8,20,33,.94);backdrop-filter:blur(20px);border:1px solid var(--v2line);border-radius:20px;padding:6px;grid-template-columns:repeat(5,1fr)}.v2bottom button{background:transparent!important;border:0!important;padding:8px 2px!important;color:#8fa5b8!important}.v2bottom button.on{color:#72d8ff!important;background:#102a43!important;border-radius:14px}.v2bottom small{display:block;font-size:9px}
+@media(max-width:720px){.v2top .tabs{display:none}.v2bottom{display:grid}.brandline{padding:0 12px 8px}.home-grid{grid-template-columns:repeat(2,1fr)}.home-card{min-height:115px}.quick-grid{grid-template-columns:repeat(2,1fr)}.home-summary{grid-template-columns:1fr}.v2hero h2{font-size:26px}main{padding-bottom:10px!important}}
+@media(min-width:721px){.v2top{padding-bottom:0}.v2bottom{display:none}}
+
+>>>>>>> FETCH_HEAD
 :root{--bg:#0d1117;--card:#161b22;--line:#30363d;--txt:#e6edf3;--dim:#8b949e;--ok:#3fb950;--warn:#d29922;--bad:#f85149;--acc:#238636;--blue:#58a6ff;--pur:#bc8cff;--ora:#f0883e}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.45 system-ui,-apple-system,sans-serif;padding-bottom:80px}

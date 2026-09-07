@@ -8,92 +8,27 @@
 <link rel="manifest" href="./manifest.json">
 <link rel="icon" href="./icon.svg">
 <link rel="stylesheet" href="./style/style.css">
-<link rel="stylesheet" href="./style/v3.css">
 <script defer src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/legacy/build/pdf.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 <script defer src="./scripts/app.js"></script>
-<script defer src="./scripts/v3.js"></script>
 </head>
 <body>
-
-<header class="mh3-header">
-  <div class="mh3-brandbar">
-    <button class="mh3-brand" onclick="tab('home')" aria-label="Accueil MesHeures">
-      <span class="mh3-logo">🚑</span>
-      <span><b>MesHeures</b><small>V3 · Ambulancier</small></span>
-    </button>
-    <div class="mh3-head-actions">
-      <button class="mh3-iconbtn" onclick="goToday();tab('jour')" title="Aujourd'hui">⌾</button>
-      <button class="mh3-iconbtn" onclick="tab('audit')" title="Audit">🛡</button>
-    </div>
-  </div>
-  <nav class="mh3-tabs">
-    <button id="t-home" class="on" onclick="tab('home')">Accueil</button>
-    <button id="t-jour" onclick="tab('jour')">Journée</button>
-    <button id="t-mois" onclick="tab('mois')">Mois</button>
-    <button id="t-paie" onclick="tab('paie')">Paie</button>
-    <button id="t-audit" onclick="tab('audit')">Audit</button>
-    <button id="t-bul" onclick="tab('bul')">Bulletin</button>
-    <button id="t-romi" onclick="tab('romi')">ROMI1</button>
-    <button id="t-reg" onclick="tab('reg')">Réglages</button>
-  </nav>
+<header>
+<h1>🚑 MesHeures <span id="hBadge" style="display:none" class="badge">!</span></h1>
+<div class="tabs">
+<button id="t-jour" class="on" onclick="tab('jour')">Jour</button>
+<button id="t-mois" onclick="tab('mois')">Mois</button>
+<button id="t-paie" onclick="tab('paie')">Paie</button>
+<button id="t-audit" onclick="tab('audit')">Audit</button>
+<button id="t-bul" onclick="tab('bul')">Bulletin</button>
+<button id="t-romi" onclick="tab('romi')">ROMI1</button>
+<button id="t-reg" onclick="tab('reg')">Réglages</button>
+</div>
 </header>
-
 <main>
 
-
-<section id="s-home" class="on">
-  <div class="mh3-welcome">
-    <div>
-      <div class="mh3-eyebrow">TON TEMPS · TES DROITS · TES PREUVES</div>
-      <h2>Bonjour <span id="mh3Name">👋</span></h2>
-      <p id="mh3Date">Chargement…</p>
-    </div>
-    <button class="mh3-today-btn" onclick="goToday();tab('jour')">Aujourd'hui <b>→</b></button>
-  </div>
-
-  <div class="mh3-primary-card">
-    <div class="mh3-primary-top">
-      <div>
-        <span class="mh3-overline">JOURNÉE DU JOUR</span>
-        <h3 id="mh3TodayTitle">Prêt à commencer</h3>
-        <p id="mh3TodayMeta">Choisis ton type de journée et saisis tes horaires.</p>
-      </div>
-      <div class="mh3-ring"><strong id="mh3TodayHours">—</strong><small>TTE</small></div>
-    </div>
-    <div class="mh3-primary-actions">
-      <button onclick="goToday();tab('jour')">✦ Ouvrir ma journée</button>
-      <button class="ghost" onclick="dupliConfirm()">⎘ Copier la veille</button>
-    </div>
-  </div>
-
-  <div class="mh3-section-title"><span>Ma période</span><button onclick="tab('paie')">Voir la paie →</button></div>
-  <div class="mh3-metrics">
-    <button class="mh3-metric" onclick="tab('paie')"><span class="ico">◷</span><small>TTE</small><strong id="mh3PeriodTTE">—</strong><em id="mh3PeriodDays">Période en cours</em></button>
-    <button class="mh3-metric" onclick="tab('paie')"><span class="ico">↗</span><small>HEURES SUP.</small><strong id="mh3PeriodHS">—</strong><em>25 % + 50 %</em></button>
-    <button class="mh3-metric" onclick="tab('paie')"><span class="ico">€</span><small>BRUT ESTIMÉ</small><strong id="mh3PeriodPay">—</strong><em>Estimation</em></button>
-  </div>
-
-  <div class="mh3-section-title"><span>À surveiller</span><button onclick="tab('audit')">Audit complet →</button></div>
-  <div id="mh3Alerts" class="mh3-alert-panel"></div>
-
-  <div class="mh3-section-title"><span>Raccourcis</span></div>
-  <div class="mh3-shortcuts">
-    <button onclick="tab('jour')"><span>📝</span><b>Saisir</b><small>Une journée</small></button>
-    <button onclick="tab('mois')"><span>📅</span><b>Calendrier</b><small>Mon mois</small></button>
-    <button onclick="tab('bul')"><span>📄</span><b>Bulletin</b><small>Comparer</small></button>
-    <button onclick="tab('romi')"><span>🔎</span><b>ROMI1</b><small>Analyser</small></button>
-    <button onclick="tab('audit')"><span>🛡️</span><b>Audit</b><small>Contrôler</small></button>
-    <button onclick="tab('reg')"><span>⚙️</span><b>Réglages</b><small>Paramètres</small></button>
-  </div>
-
-  <div class="mh3-section-title"><span>Derniers jours</span><button onclick="tab('mois')">Calendrier →</button></div>
-  <div id="mh3Recent" class="mh3-recent"></div>
-</section>
-
-<section id="s-jour">
-<div id="mh3DayHero" class="mh3-day-hero"></div>
+<section id="s-jour" class="on">
 <div class="nav">
 <button class="g" onclick="goDay(-1)">‹</button>
 <div class="lbl" id="dLbl"></div>
@@ -264,13 +199,6 @@ Le ROMI1 reçu est un scan impression PDF sans texte à intérieur L appli le li
 </div>
 </section>
 </main>
-<nav class="mh3-bottomnav">
-  <button id="b-home" class="on" onclick="tab('home')"><span>⌂</span><small>Accueil</small></button>
-  <button id="b-jour" onclick="tab('jour')"><span>◷</span><small>Jour</small></button>
-  <button id="b-paie" onclick="tab('paie')"><span>€</span><small>Paie</small></button>
-  <button id="b-audit" onclick="tab('audit')"><span>🛡</span><small>Audit</small></button>
-  <button id="b-more" onclick="tab('reg')"><span>☰</span><small>Plus</small></button>
-</nav>
 
 <div class="modal-bg" id="undoModal">
 <div class="modal">

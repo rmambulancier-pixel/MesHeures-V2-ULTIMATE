@@ -1,0 +1,1 @@
+export const pad=n=>String(n).padStart(2,'0');export const P=s=>{if(!s||!/^\\d{1,2}:\\d{2}/.test(s))return null;const[h,m]=s.split(':').map(Number);return h*60+m};export const F=m=>{if(m==null)return'—';const g=m<0;m=Math.abs(Math.round(m));return(g?'-':'')+Math.floor(m/60)+'h'+pad(m%60)};
